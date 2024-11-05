@@ -102,21 +102,43 @@ function ConvertHandler() {
     const miToKm = 1.60934;
     const LToGal = 0.264172;
     const kgToLbs = 2.204623;
-    const kmToMi = 0.6213712;
+    const kmToMi = 0.62137;
+    const cf = 100000;
+    let precision = 5;
+    let factor = Math.pow(10, precision);
 
     switch (initNum,initUnit) {
       case initUnit = 'gal':
-        return Number((initNum * galToL).toFixed(5));
+        // return Math.round((initNum*galToL) * factor) / factor
+        // return Number(((initNum * cf) * (galToL * cf) / (cf * cf)).toFixed(5))
+        let gal = parseFloat((initNum * galToL));
+        return Number(gal.toFixed(5))
       case initUnit = 'L':
-        return Number((initNum * LToGal).toFixed(5));
+        // return Math.round((initNum*LToGal) * factor) / factor
+        // return Number(((initNum * cf) * (LToGal * cf) / (cf * cf)).toFixed(5))
+        let L = parseFloat((initNum * LToGal));
+        return Number(L.toFixed(5))
       case initUnit = 'lbs':
-        return Number((initNum * lbsToKg).toFixed(5));
+        // return Math.round((initNum*lbsToKg) * factor) / factor
+        // return Number(((initNum * cf) * (lbsToKg * cf) / (cf * cf)).toFixed(5))
+        let lbs = parseFloat((initNum * lbsToKg));
+        // console.log(initNum, lbs, lbs.toFixed(5))
+        return Number(lbs.toFixed(5))
       case initUnit = 'kg':
-        return Number((initNum * kgToLbs).toFixed(5));
+        // return Math.round((initNum*kgToLbs) * factor) / factor
+        // return Number(((initNum * cf) * (kgToLbs * cf) / (cf * cf)).toFixed(5))
+        let kg = parseFloat((initNum * kgToLbs));
+        return Number(kg.toFixed(5))
       case initUnit = 'mi':
-        return Number((initNum * miToKm).toFixed(5));
+        // return Math.round((initNum*miToKm) * factor) / factor
+        // return Number(((initNum * cf) * (miToKm * cf) / (cf * cf)).toFixed(5))
+        let mi = parseFloat((initNum * miToKm));
+        return Number(mi.toFixed(5))
       case initUnit = 'km':
-        return Number((initNum * kmToMi).toFixed(5));
+        // return Math.round((initNum*kmToMi) * factor) / factor
+        // return Number(((initNum * cf) * (kmToMi * cf) / (cf * cf)).toFixed(5))
+        let km = parseFloat((initNum * kmToMi));
+        return Number(km.toFixed(5))
     };
   };
   

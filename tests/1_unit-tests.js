@@ -96,25 +96,41 @@ suite('Unit Tests', function(){
         })
     });
     suite('conversion tests', function() {
-        test('each valid input correctly converts number and unit', function() {
+        test('gallons correctly converts to liters', function() {
             // test unit conversion
             // test specific number conversions
             assert.equal(convertHandler.convert(1,'gal'), 3.78541)
+            assert.equal(convertHandler.convert(2,'gal'), 7.57082)
             assert.equal(convertHandler.convert(3,'gal'), 11.35623)
             assert.equal(convertHandler.convert(10,'gal'), 37.8541)
+        })
+        test('liters correctly converts to gallons', function() {
             assert.equal(convertHandler.convert(1,'L'), 0.26417)
+            assert.equal(convertHandler.convert(2,'L'), 0.52834)
             assert.equal(convertHandler.convert(3,'L'), 0.79252)
             assert.equal(convertHandler.convert(10,'L'), 2.64172)
+        })
+        test('miles correctly converts to kilometers', function() {
             assert.equal(convertHandler.convert(1,'mi'), 1.60934)
-            assert.equal(convertHandler.convert(3,'mi'), 4.82802)
-            assert.equal(convertHandler.convert(10,'mi'), 16.0934)
+            assert.equal(convertHandler.convert(2,'mi'), 3.21869)
+            assert.equal(convertHandler.convert(3,'mi'), 4.82803)
+            assert.equal(convertHandler.convert(10,'mi'), 16.09344)
+        })
+        test('kilometers correctly converts to miles', function() {
             assert.equal(convertHandler.convert(1,'km'), 0.62137)
+            assert.equal(convertHandler.convert(2,'km'), 1.24274)
             assert.equal(convertHandler.convert(3,'km'), 1.86411)
             assert.equal(convertHandler.convert(10,'km'), 6.21371)
+        })
+        test('pounds correctly converts to kilograms', function() {
             assert.equal(convertHandler.convert(1,'lbs'), 0.45359)
+            assert.equal(convertHandler.convert(2,'lbs'), 0.90718)
             assert.equal(convertHandler.convert(3,'lbs'), 1.36078)
             assert.equal(convertHandler.convert(10,'lbs'), 4.53592)
+        })
+        test('kilograms correctly converts to pounds', function() {
             assert.equal(convertHandler.convert(1,'kg'), 2.20462)
+            assert.equal(convertHandler.convert(2,'kg'), 4.40925)
             assert.equal(convertHandler.convert(3,'kg'), 6.61387)
             assert.equal(convertHandler.convert(10,'kg'), 22.04623)
         })
